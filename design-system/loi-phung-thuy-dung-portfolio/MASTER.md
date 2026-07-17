@@ -19,18 +19,18 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#1E3A5F` | `--color-primary` |
+| Primary | `#102A56` | `--color-primary` |
 | On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#334155` | `--color-secondary` |
-| Accent/CTA | `#B45309` | `--color-accent` |
-| Background | `#F8FAFC` | `--color-background` |
-| Foreground | `#0F172A` | `--color-foreground` |
-| Muted | `#E9EEF5` | `--color-muted` |
-| Border | `#CBD5E1` | `--color-border` |
-| Destructive | `#DC2626` | `--color-destructive` |
-| Ring | `#1E3A5F` | `--color-ring` |
+| Secondary | `#173E77` | `--color-secondary` |
+| Accent/CTA | `#C8102E` | `--color-accent` |
+| Background | `#F4F7FB` | `--color-background` |
+| Foreground | `#081A36` | `--color-foreground` |
+| Muted | `#E7EEF8` | `--color-muted` |
+| Border | `#C8D8EE` | `--color-border` |
+| Destructive | `#8F0C22` | `--color-destructive` |
+| Ring | `#C8102E` | `--color-ring` |
 
-**Color Notes:** Scholarly navy + citation gold + serif accent
+**Color Notes:** British red, crisp white and scholarly navy. Every page may vary in composition, but no extra theme color is introduced.
 
 ### Typography
 
@@ -76,7 +76,7 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #B45309;
+  background: #C8102E;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -93,8 +93,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #1E3A5F;
-  border: 2px solid #1E3A5F;
+  color: #102A56;
+  border: 2px solid #102A56;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -107,7 +107,7 @@
 
 ```css
 .card {
-  background: #F8FAFC;
+  background: #FFFFFF;
   border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow-md);
@@ -133,9 +133,9 @@
 }
 
 .input:focus {
-  border-color: #1E3A5F;
+  border-color: #102A56;
   outline: none;
-  box-shadow: 0 0 0 3px #1E3A5F20;
+  box-shadow: 0 0 0 3px #C8102E20;
 }
 ```
 

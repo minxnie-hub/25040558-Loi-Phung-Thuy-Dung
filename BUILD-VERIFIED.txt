@@ -1,0 +1,13 @@
+Verification completed on 2026-07-17
+
+Commands tested from a clean install:
+  npm ci --include=dev --no-audit --no-fund
+  NEXT_PUBLIC_BASE_PATH=/25040558-Loi-Phung-Thuy-Dung npm run build
+
+Result:
+  - Dependencies installed successfully
+  - Next.js v14.2.35 available at node_modules/.bin/next
+  - Production build completed successfully
+  - 11 static pages generated
+  - out/index.html exists
+  - out/_next exists
