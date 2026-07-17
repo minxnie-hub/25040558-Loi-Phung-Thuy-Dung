@@ -13,6 +13,8 @@ export type Project = {
   pages: number;
   pdf: string;
   keywords: string[];
+  decorImage: string;
+  visualNote: string;
 };
 
 export const projects: Project[] = [
@@ -28,7 +30,9 @@ export const projects: Project[] = [
     coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-1-thao-tac-tep-tin-va-thu-muc.pdf",
-    keywords: ["File Explorer", "Windows", "Thực hành"]
+    keywords: ["File Explorer", "Windows", "Thực hành"],
+    decorImage: "/graphics/pin-london-collage.webp",
+    visualNote: "Field notes · London collage · folder system"
   },
   {
     number: "02",
@@ -42,7 +46,9 @@ export const projects: Project[] = [
     coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-2-tim-kiem-va-danh-gia-thong-tin-hoc-thuat.pdf",
-    keywords: ["AI in ELT", "Nguồn học thuật", "Harvard"]
+    keywords: ["AI in ELT", "Nguồn học thuật", "Harvard"],
+    decorImage: "/graphics/pin-bigben-editorial.webp",
+    visualNote: "Academic editorial · archive · evidence board"
   },
   {
     number: "03",
@@ -56,7 +62,9 @@ export const projects: Project[] = [
     coverPage: 1,
     pages: 6,
     pdf: "/documents/bai-3-viet-prompt-hieu-qua.pdf",
-    keywords: ["Prompt", "AI", "Học tập"]
+    keywords: ["Prompt", "AI", "Học tập"],
+    decorImage: "/graphics/concept-prompt.webp",
+    visualNote: "Prompt console · input → refine → evaluate"
   },
   {
     number: "04",
@@ -70,7 +78,9 @@ export const projects: Project[] = [
     coverPage: 2,
     pages: 2,
     pdf: "/documents/bai-4-cong-cu-hop-tac-truc-tuyen.pdf",
-    keywords: ["Google Docs", "Làm việc nhóm", "Minh chứng"]
+    keywords: ["Google Docs", "Làm việc nhóm", "Minh chứng"],
+    decorImage: "/graphics/concept-collab.webp",
+    visualNote: "Transit map · task board · connected teamwork"
   },
   {
     number: "05",
@@ -84,7 +94,9 @@ export const projects: Project[] = [
     coverPage: 4,
     pages: 6,
     pdf: "/documents/bai-5-ai-tao-sinh-sang-tao-noi-dung.pdf",
-    keywords: ["ChatGPT", "DALL-E", "Canva AI"]
+    keywords: ["ChatGPT", "DALL-E", "Canva AI"],
+    decorImage: "/graphics/pin-london-city.webp",
+    visualNote: "Creative scrapbook · image · type · layout"
   },
   {
     number: "06",
@@ -98,7 +110,9 @@ export const projects: Project[] = [
     coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-6-ai-co-trach-nhiem.pdf",
-    keywords: ["Đạo đức AI", "Minh bạch", "Học thuật"]
+    keywords: ["Đạo đức AI", "Minh bạch", "Học thuật"],
+    decorImage: "/graphics/concept-ethics.webp",
+    visualNote: "Policy poster · checklist · responsibility seal"
   }
 ];
 

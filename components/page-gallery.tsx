@@ -6,9 +6,10 @@ export function PageGallery({ task, pages, variant = "grid" }: { task: number; p
       {Array.from({ length: pages }, (_, index) => {
         const page = index + 1;
         return (
-          <figure key={page} className="document-page">
-            <img src={asset(`/projects/task${task}/page-${page}.webp`)} alt={`Bài ${task}, trang ${page} trong tài liệu gốc`} loading={page > 2 ? "lazy" : "eager"} />
-            <figcaption>Trang {String(page).padStart(2, "0")}</figcaption>
+          <figure key={page} className={`document-page document-page--${(index % 3) + 1}`}>
+            <span className="document-page__tape" aria-hidden="true" />
+            <img src={asset(`/projects/task${task}/page-${page}.webp`)} alt={`Bài ${task}, trang ${page} trong tài liệu gốc`} loading="eager" />
+            <figcaption><span>ORIGINAL</span> Trang {String(page).padStart(2, "0")}</figcaption>
           </figure>
         );
       })}
