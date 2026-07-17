@@ -3,6 +3,7 @@ import { ArrowDownRight, BookOpen, BrainCircuit, Brush, CheckCircle2, Gamepad2, 
 import { UnionJack } from "@/components/brand-marks";
 import { GraphicPhoto, PaperSticker } from "@/components/graphic-photo";
 import { ProjectCard } from "@/components/project-card";
+import { HomeBritishBoard } from "@/components/theme-artboard";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -37,14 +38,7 @@ export default function HomePage() {
 
           <div className="hero-collage">
             <div className="hero-collage__board">
-              <GraphicPhoto
-                className="hero-collage__panel"
-                src="/graphics/panel-task2.webp"
-                alt="Graphic London theo phong cách editorial"
-                label="LONDON / GRAPHIC STUDY"
-              />
-              <img className="hero-collage__sticker hero-collage__sticker--stamp" src={asset("/graphics/stickers/bigben-stamp.png")} alt="" aria-hidden="true" />
-              <img className="hero-collage__sticker hero-collage__sticker--bus" src={asset("/graphics/stickers/bus-red.png")} alt="" aria-hidden="true" />
+              <HomeBritishBoard />
             </div>
             <figure className="hero-collage__portrait">
               <span className="hero-collage__portrait-tape" aria-hidden="true" />

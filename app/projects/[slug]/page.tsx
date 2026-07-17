@@ -1,64 +1,18 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Download, FileArchive, FolderOpen, Lightbulb, MessageSquareText, Search, ShieldCheck, Sparkles } from "lucide-react";
 import { UnionJack } from "@/components/brand-marks";
-import { GraphicPhoto, NumberBadge, PaperSticker } from "@/components/graphic-photo";
+import { NumberBadge, PaperSticker } from "@/components/graphic-photo";
 import { PageGallery } from "@/components/page-gallery";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
+import { ThemeArtboard } from "@/components/theme-artboard";
 import { SiteHeader } from "@/components/site-header";
 import { asset } from "@/lib/assets";
-import { getProject, projects, type Project, type ProjectTheme } from "@/lib/projects";
+import { getProject, projects, type Project } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
-}
-
-function ThemeStickers({ theme }: { theme: ProjectTheme }) {
-  switch (theme) {
-    case "files":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/bigben-stamp.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/bus-red.png")} alt="" aria-hidden="true" />
-        </>
-      );
-    case "research":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/magnifier.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/research-notes.png")} alt="" aria-hidden="true" />
-        </>
-      );
-    case "prompts":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/chip.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/uk-flag.png")} alt="" aria-hidden="true" />
-        </>
-      );
-    case "collab":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/tube-sign.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/uk-flag.png")} alt="" aria-hidden="true" />
-        </>
-      );
-    case "studio":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/scissors.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/camera.png")} alt="" aria-hidden="true" />
-        </>
-      );
-    case "ethics":
-      return (
-        <>
-          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/ethics-shield.png")} alt="" aria-hidden="true" />
-          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/ethics-badge.png")} alt="" aria-hidden="true" />
-        </>
-      );
-  }
 }
 
 function ProjectHero({ project }: { project: Project }) {
@@ -76,8 +30,7 @@ function ProjectHero({ project }: { project: Project }) {
         </div>
         <div className="project-hero__visual">
           <div className="project-hero__board">
-            <GraphicPhoto className="project-hero__photo" src={project.decorImage} alt={`Graphic trang trí cho ${project.title}`} label={project.visualNote} />
-            <ThemeStickers theme={project.theme} />
+            <ThemeArtboard theme={project.theme} variant="page" />
           </div>
           <figure className="project-hero__document">
             <span className="project-hero__tape" aria-hidden="true" />
@@ -105,7 +58,7 @@ function FilesStory({ project }: { project: Project }) {
         <PaperSticker>KEEP CALM<br />& ORGANIZE<br />YOUR FILES</PaperSticker>
       </Reveal>
       <div className="files-overview">
-        <GraphicPhoto className="story-photo story-photo--portrait" src={project.decorImage} alt="London collage cho bài 1" label="LONDON FIELD NOTE" />
+        <ThemeArtboard theme={project.theme} variant="page" />
         <div className="file-route">
           {steps.map(([range, title, text], index) => (
             <Reveal className="file-route__stop" key={range} delay={index * 60}>
@@ -124,7 +77,7 @@ function ResearchStory({ project }: { project: Project }) {
   const sources = ["Google Scholar", "ERIC", "Oxford Academic", "Scopus", "Thư viện số của trường"];
   return (
     <div className="research-story project-content-shell">
-      <GraphicPhoto className="research-story__banner" src={project.decorImage} alt="Editorial Big Ben cho bài nghiên cứu" label="ACADEMIC ARCHIVE · LONDON" />
+      <ThemeArtboard theme={project.theme} variant="page" />
       <Reveal className="research-masthead">
         <div className="research-masthead__issue"><span>VOL. 01</span><b>THE ENGLISH LANGUAGE REVIEW</b><span>2026</span></div>
         <h2>Artificial Intelligence in English Language Teaching and Learning</h2>
@@ -150,7 +103,7 @@ function PromptsStory({ project }: { project: Project }) {
   return (
     <div className="prompts-story project-content-shell">
       <div className="prompt-visual-band">
-        <GraphicPhoto className="prompt-visual-band__photo" src={project.decorImage} alt="Concept Prompt Engineering" label="INPUT → REFINE → EVALUATE" />
+        <ThemeArtboard theme={project.theme} variant="page" />
         <div className="prompt-visual-band__console"><span>SYSTEM</span><code>You are a helpful English tutor.</code><span>USER</span><code>Explain the passive voice for A2 learners.</code><span>OUTPUT</span><code>Clear · structured · example-led</code></div>
       </div>
       <Reveal className="prompt-console-title"><span>PROMPT LAB / 3</span><h2>Ba cấp độ cho ba tác vụ học tập</h2></Reveal>
@@ -174,7 +127,7 @@ function CollaborationStory({ project }: { project: Project }) {
   return (
     <div className="collab-story project-content-shell">
       <div className="collab-intro">
-        <GraphicPhoto className="collab-intro__photo" src={project.decorImage} alt="Concept bảng làm việc nhóm" label="CONNECTED ROUTE · TEAMWORK" />
+        <ThemeArtboard theme={project.theme} variant="page" />
         <Reveal className="collab-intro__copy"><p className="eyebrow">Midterm teamwork log</p><h2>Bảng điều phối cá nhân</h2><p>Mỗi nhiệm vụ là một trạm, mỗi công cụ là một tuyến kết nối.</p><span className="status-chip">Hoàn thành đúng hạn</span></Reveal>
       </div>
       <div className="collab-board">
@@ -198,7 +151,7 @@ function StudioStory({ project }: { project: Project }) {
   return (
     <div className="studio-story project-content-shell">
       <div className="studio-collage">
-        <GraphicPhoto className="studio-collage__london" src={project.decorImage} alt="London city graphic" label="LONDON CREATIVE CUT" />
+        <ThemeArtboard theme={project.theme} variant="page" />
         <figure className="studio-collage__project"><span aria-hidden="true" /><img src={asset("/projects/task5/page-4.webp")} alt="Ảnh chụp Canva AI thực tế trong bài tập 5" /><figcaption>ACTUAL PROCESS CAPTURE</figcaption></figure>
         <PaperSticker className="studio-collage__note">IDEA → TEXT → IMAGE → LAYOUT → HUMAN EDIT</PaperSticker>
       </div>
@@ -219,7 +172,7 @@ function EthicsStory({ project }: { project: Project }) {
   return (
     <div className="ethics-story project-content-shell">
       <div className="ethics-visual">
-        <GraphicPhoto className="ethics-visual__court" src={project.decorImage} alt="Concept Responsible AI" label="POLICY · JUSTICE · ACCOUNTABILITY" />
+        <ThemeArtboard theme={project.theme} variant="page" />
         <Reveal className="ethics-visual__manifesto"><ShieldCheck /><p className="eyebrow">Responsible AI manifesto</p><h2>AI hỗ trợ, người học quyết định</h2><p>Bài tập kết nối chính sách của ĐHQGHN, một nhiệm vụ IELTS Writing và bộ nguyên tắc sử dụng AI có trách nhiệm.</p><span className="ethics-seal">CHECKED<br /><b>RESPONSIBLE AI</b></span></Reveal>
       </div>
       <div className="ethics-principles">

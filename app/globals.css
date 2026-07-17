@@ -643,3 +643,152 @@ h1, h2 { font-family: var(--serif); }
     margin-top: 20px;
   }
 }
+
+/* ===== individual cutout graphic system ===== */
+.sticker-board {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(225,47,78,.1), transparent 24%),
+    radial-gradient(circle at 82% 26%, rgba(16,43,95,.08), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, #f7f3ea 100%);
+  border: 1px solid rgba(6,26,58,.12);
+  box-shadow: 0 18px 36px rgba(6,26,58,.1);
+}
+.sticker-board__paper {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(16,43,95,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,43,95,.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: .38;
+}
+.sticker-board__item {
+  position: absolute;
+  display: block;
+  max-width: none;
+  filter: drop-shadow(0 10px 20px rgba(6,26,58,.12));
+}
+.sticker-board--home {
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+}
+.sticker-board--card {
+  position: absolute;
+  inset: 16px;
+}
+.sticker-board--page {
+  width: 100%;
+  min-height: 320px;
+}
+.hero-collage__board .sticker-board {
+  clip-path: polygon(6% 0,100% 0,100% 93%,88% 100%,0 94%,0 11%);
+}
+.project-hero__board .sticker-board {
+  height: 100%;
+  clip-path: polygon(0 0,94% 0,100% 8%,96% 100%,8% 96%,0 88%);
+}
+.files-overview > .sticker-board,
+.research-story > .sticker-board,
+.collab-intro > .sticker-board,
+.ethics-visual > .sticker-board,
+.prompt-visual-band > .sticker-board,
+.studio-collage > .sticker-board {
+  min-height: 320px;
+}
+/* home layout */
+.sticker-board__item--home-library { width: 190px; left: 16%; top: 20%; transform: rotate(-6deg); }
+.sticker-board__item--home-magnifier { width: 150px; left: 48%; top: 30%; transform: rotate(10deg); }
+.sticker-board__item--home-bigben { width: 150px; right: 16%; top: 17%; }
+.sticker-board__item--home-bus { width: 160px; left: 24%; bottom: 12%; }
+.sticker-board__item--home-cup { width: 120px; right: 14%; bottom: 10%; transform: rotate(4deg); }
+/* files */
+.sticker-board__item--files-bigben { width: 24%; left: 11%; top: 14%; }
+.sticker-board__item--files-bus { width: 24%; left: 36%; bottom: 10%; }
+.sticker-board__item--files-cup { width: 26%; right: 10%; bottom: 12%; }
+/* research */
+.sticker-board__item--research-library { width: 33%; left: 12%; top: 18%; transform: rotate(-5deg); }
+.sticker-board__item--research-magnifier { width: 28%; left: 43%; top: 29%; transform: rotate(8deg); }
+.sticker-board__item--research-notes { width: 24%; right: 11%; bottom: 14%; transform: rotate(-3deg); }
+/* prompts */
+.sticker-board__item--prompts-console { width: 33%; left: 11%; top: 22%; }
+.sticker-board__item--prompts-robot { width: 28%; right: 14%; bottom: 10%; }
+.sticker-board__item--prompts-chip { width: 22%; right: 10%; top: 13%; transform: rotate(8deg); }
+/* collab */
+.sticker-board__item--collab-map { width: 39%; left: 10%; top: 19%; }
+.sticker-board__item--collab-chat { width: 23%; right: 13%; top: 18%; transform: rotate(1deg); }
+.sticker-board__item--collab-passport { width: 23%; right: 10%; bottom: 10%; transform: rotate(-8deg); }
+/* studio */
+.sticker-board__item--studio-polaroids { width: 33%; left: 14%; top: 18%; }
+.sticker-board__item--studio-scissors { width: 16%; right: 18%; top: 16%; transform: rotate(8deg); }
+.sticker-board__item--studio-colorbar { width: 28%; right: 13%; bottom: 14%; }
+/* ethics */
+.sticker-board__item--ethics-shield { width: 24%; left: 12%; bottom: 12%; }
+.sticker-board__item--ethics-checklist { width: 31%; right: 12%; top: 12%; }
+.sticker-board__item--ethics-badge { width: 22%; right: 14%; bottom: 10%; }
+
+/* better spacing for new boards */
+.hero-collage__board { inset: 12px 18px 82px 96px; }
+.project-card__visual { min-height: 320px; }
+.project-card__document { width: 39%; right: 14px; bottom: 16px; }
+.project-card__sticker { left: 14px; bottom: 12px; max-width: 48%; }
+.project-card .number-badge { top: 14px; left: 14px; }
+.project-hero__board { inset: 0 62px 66px 0; }
+.project-hero__document { width: 35%; right: 0; bottom: -18px; }
+.files-overview { grid-template-columns: minmax(260px,.92fr) minmax(0,1.08fr); }
+.research-story > .sticker-board { margin-bottom: 24px; }
+.prompt-visual-band > .sticker-board { min-height: 360px; }
+.collab-intro { grid-template-columns: minmax(260px,.92fr) minmax(0,1.08fr); }
+.ethics-visual { grid-template-columns: minmax(260px,.9fr) minmax(0,1.1fr); }
+.studio-collage > .sticker-board { position: absolute; inset: 0 28% 54px 0; }
+
+@media (max-width: 900px) {
+  .sticker-board--home { min-height: 400px; }
+  .sticker-board__item--home-library { width: 170px; left: 10%; }
+  .sticker-board__item--home-magnifier { width: 130px; left: 45%; }
+  .sticker-board__item--home-bigben { width: 130px; right: 10%; }
+  .sticker-board__item--home-bus { width: 145px; left: 18%; }
+  .sticker-board__item--home-cup { width: 100px; }
+  .project-hero__board { inset: 0 30px 70px 0; }
+  .project-card__visual { min-height: 300px; }
+}
+@media (max-width: 680px) {
+  .sticker-board--home { min-height: 320px; }
+  .hero-collage__board { inset: 0 0 92px 42px; }
+  .sticker-board__item--home-library { width: 126px; left: 8%; top: 20%; }
+  .sticker-board__item--home-magnifier { width: 94px; left: 40%; top: 32%; }
+  .sticker-board__item--home-bigben { width: 95px; right: 8%; top: 18%; }
+  .sticker-board__item--home-bus { width: 110px; left: 16%; bottom: 13%; }
+  .sticker-board__item--home-cup { width: 72px; right: 8%; bottom: 12%; }
+  .project-card__visual { min-height: 280px; }
+  .project-card__document { width: 43%; }
+  .project-card__sticker { max-width: 56%; }
+  .project-hero__document { width: 42%; }
+  .project-hero__board { inset: 0 0 72px 0; }
+  .sticker-board--page { min-height: 250px; }
+  .files-overview,
+  .collab-intro,
+  .ethics-visual,
+  .prompt-visual-band { grid-template-columns: 1fr; }
+  .sticker-board__item--files-bigben,
+  .sticker-board__item--research-library,
+  .sticker-board__item--prompts-console,
+  .sticker-board__item--collab-map,
+  .sticker-board__item--studio-polaroids,
+  .sticker-board__item--ethics-shield { width: 34%; }
+  .sticker-board__item--files-bus,
+  .sticker-board__item--research-magnifier,
+  .sticker-board__item--prompts-robot,
+  .sticker-board__item--collab-chat,
+  .sticker-board__item--studio-scissors,
+  .sticker-board__item--ethics-checklist { width: 28%; }
+  .sticker-board__item--files-cup,
+  .sticker-board__item--research-notes,
+  .sticker-board__item--prompts-chip,
+  .sticker-board__item--collab-passport,
+  .sticker-board__item--studio-colorbar,
+  .sticker-board__item--ethics-badge { width: 24%; }
+}
