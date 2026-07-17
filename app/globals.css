@@ -403,3 +403,243 @@ h1, h2 { font-family: var(--serif); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===== refined graphic direction: sharper assets, simpler typography ===== */
+.hero h1 {
+  font-size: clamp(4rem, 7.2vw, 7.2rem);
+  line-height: 0.86;
+}
+.hero h1 strong {
+  margin-left: 0.22em;
+}
+.hero-collage {
+  min-height: 620px;
+}
+.hero-collage__board {
+  position: absolute;
+  inset: 12px 28px 82px 112px;
+}
+.hero-collage__panel {
+  height: 100%;
+  clip-path: polygon(7% 0,100% 0,100% 92%,86% 100%,0 94%,0 12%);
+}
+.hero-collage__sticker {
+  position: absolute;
+  z-index: 3;
+  filter: drop-shadow(0 12px 24px rgba(6,26,58,.14));
+}
+.hero-collage__sticker--stamp {
+  width: 180px;
+  right: -18px;
+  top: -10px;
+  transform: rotate(4deg);
+}
+.hero-collage__sticker--bus {
+  width: 235px;
+  left: -34px;
+  bottom: -26px;
+}
+.hero-collage__portrait {
+  width: min(44%, 280px);
+  left: 8px;
+  bottom: 12px;
+  transform: rotate(-4deg);
+}
+.hero-collage__quote {
+  right: 14px;
+  top: 22px;
+}
+.hero-collage__flag {
+  right: 8%;
+  bottom: 16px;
+}
+.about-visual__photo {
+  height: 420px;
+}
+.project-card__visual {
+  background: linear-gradient(180deg,#fbfdff,#edf4fb);
+}
+.project-card__decor-photo {
+  inset: 18px 18px 18px 18px;
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid rgba(6,26,58,.14);
+  box-shadow: 0 10px 24px rgba(6,26,58,.08);
+}
+.project-card__photo-wash {
+  background: linear-gradient(180deg,rgba(255,255,255,.0) 42%,rgba(6,26,58,.12));
+}
+.project-card__document {
+  width: 40%;
+}
+.project-card__sticker {
+  width: auto;
+  max-width: 52%;
+}
+.project-card .number-badge {
+  min-width: 46px;
+  height: 46px;
+  font-size: 1.2rem;
+}
+.project-hero__visual {
+  min-height: 560px;
+}
+.project-hero__board {
+  position: absolute;
+  inset: 0 70px 70px 0;
+}
+.project-hero__photo {
+  inset: auto;
+  position: relative;
+  height: 100%;
+  clip-path: polygon(0 0,94% 0,100% 8%,96% 100%,8% 96%,0 88%);
+}
+.project-hero__sticker-img {
+  position: absolute;
+  z-index: 3;
+  max-width: 210px;
+  filter: drop-shadow(0 12px 24px rgba(6,26,58,.14));
+}
+.project-hero__sticker-img--a {
+  left: -20px;
+  top: -12px;
+  transform: rotate(-4deg);
+}
+.project-hero__sticker-img--b {
+  right: -18px;
+  bottom: -14px;
+  transform: rotate(4deg);
+}
+.project-hero__document {
+  width: 36%;
+}
+.project-hero__sticker {
+  right: 6%;
+  top: 8px;
+}
+.prompt-visual-band {
+  grid-template-columns: minmax(0,1fr) minmax(320px,.86fr);
+  align-items: end;
+}
+.prompt-visual-band__photo {
+  height: 360px;
+}
+.prompt-visual-band__console {
+  margin-left: -42px;
+  margin-bottom: 18px;
+}
+.prompt-console-title {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+.prompt-console-title h2 {
+  font-size: clamp(2.5rem,4.8vw,4.7rem);
+}
+.prompt-level {
+  min-height: 215px;
+}
+.prompt-level h3 {
+  font-size: 1.08rem;
+}
+.studio-collage {
+  min-height: 580px;
+}
+.studio-collage__london {
+  inset: 0 28% 54px 0;
+}
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: clamp(3.25rem, 11vw, 5.6rem);
+  }
+  .hero-collage {
+    min-height: 560px;
+  }
+  .hero-collage__board {
+    inset: 0 18px 110px 92px;
+  }
+  .hero-collage__sticker--stamp {
+    width: 150px;
+    right: -10px;
+  }
+  .hero-collage__sticker--bus {
+    width: 210px;
+    left: -28px;
+    bottom: -20px;
+  }
+  .project-hero__board {
+    inset: 0 44px 70px 0;
+  }
+  .prompt-visual-band__console {
+    margin-left: 0;
+  }
+}
+@media (max-width: 680px) {
+  .hero {
+    padding-top: 104px;
+  }
+  .hero h1 {
+    font-size: clamp(2.8rem, 14vw, 4.9rem);
+    line-height: .9;
+  }
+  .hero h1 strong {
+    margin-left: 0.12em;
+  }
+  .hero-collage {
+    min-height: 460px;
+  }
+  .hero-collage__board {
+    inset: 0 0 100px 54px;
+  }
+  .hero-collage__sticker--stamp {
+    width: 118px;
+  }
+  .hero-collage__sticker--bus {
+    width: 170px;
+    left: -12px;
+    bottom: -8px;
+  }
+  .hero-collage__portrait {
+    width: 43%;
+    left: 0;
+    bottom: -6px;
+  }
+  .hero-collage__quote {
+    font-size: .58rem;
+    top: 6px;
+    right: 0;
+  }
+  .hero-collage__flag .union-jack {
+    width: 72px;
+  }
+  .project-hero__visual {
+    min-height: 440px;
+  }
+  .project-hero__board {
+    inset: 0 0 70px 0;
+  }
+  .project-hero__document {
+    width: 42%;
+  }
+  .project-hero__sticker-img {
+    max-width: 130px;
+  }
+  .project-hero__sticker-img--a {
+    left: -8px;
+    top: -6px;
+  }
+  .project-hero__sticker-img--b {
+    right: -8px;
+    bottom: -6px;
+  }
+  .prompt-visual-band__photo {
+    height: 250px;
+  }
+  .prompt-console-title h2 {
+    font-size: clamp(2.1rem, 10vw, 3.2rem);
+  }
+  .prompt-levels {
+    margin-top: 20px;
+  }
+}

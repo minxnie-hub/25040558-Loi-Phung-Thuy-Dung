@@ -7,11 +7,58 @@ import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { asset } from "@/lib/assets";
-import { getProject, projects, type Project } from "@/lib/projects";
+import { getProject, projects, type Project, type ProjectTheme } from "@/lib/projects";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+function ThemeStickers({ theme }: { theme: ProjectTheme }) {
+  switch (theme) {
+    case "files":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/bigben-stamp.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/bus-red.png")} alt="" aria-hidden="true" />
+        </>
+      );
+    case "research":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/magnifier.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/research-notes.png")} alt="" aria-hidden="true" />
+        </>
+      );
+    case "prompts":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/chip.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/uk-flag.png")} alt="" aria-hidden="true" />
+        </>
+      );
+    case "collab":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/tube-sign.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/uk-flag.png")} alt="" aria-hidden="true" />
+        </>
+      );
+    case "studio":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/scissors.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/camera.png")} alt="" aria-hidden="true" />
+        </>
+      );
+    case "ethics":
+      return (
+        <>
+          <img className="project-hero__sticker-img project-hero__sticker-img--a" src={asset("/graphics/stickers/ethics-shield.png")} alt="" aria-hidden="true" />
+          <img className="project-hero__sticker-img project-hero__sticker-img--b" src={asset("/graphics/stickers/ethics-badge.png")} alt="" aria-hidden="true" />
+        </>
+      );
+  }
 }
 
 function ProjectHero({ project }: { project: Project }) {
@@ -21,18 +68,21 @@ function ProjectHero({ project }: { project: Project }) {
         <div className="project-hero__copy">
           <Link href="/#bai-tap" className="back-link"><ArrowLeft /> Quay lại 6 bài tập</Link>
           <div className="project-hero__edition"><UnionJack /><span>{project.label} · Bài {Number(project.number)}</span></div>
-          <NumberBadge value={project.number} />
+          <NumberBadge value={String(Number(project.number))} />
           <h1>{project.title}</h1>
           <p className="project-hero__description">{project.description}</p>
           <div className="project-hero__meta"><span>{project.subject}</span><span>{project.pages} trang tài liệu gốc</span></div>
           <a className="button button--primary" href={asset(project.pdf)} target="_blank" rel="noreferrer">Mở PDF gốc <Download /></a>
         </div>
         <div className="project-hero__visual">
-          <GraphicPhoto className="project-hero__photo" src={project.decorImage} alt={`Graphic trang trí cho ${project.title}`} label={project.visualNote} />
+          <div className="project-hero__board">
+            <GraphicPhoto className="project-hero__photo" src={project.decorImage} alt={`Graphic trang trí cho ${project.title}`} label={project.visualNote} />
+            <ThemeStickers theme={project.theme} />
+          </div>
           <figure className="project-hero__document">
             <span className="project-hero__tape" aria-hidden="true" />
             <img src={asset(`/projects/task${Number(project.number)}/page-${project.coverPage}.webp`)} alt={`Ảnh thật từ ${project.title}`} />
-            <figcaption>ORIGINAL WORK · {project.number}</figcaption>
+            <figcaption>ORIGINAL WORK · {String(Number(project.number))}</figcaption>
           </figure>
           <PaperSticker className="project-hero__sticker">REAL EVIDENCE<br />+ GRAPHIC STORYTELLING</PaperSticker>
         </div>
@@ -103,7 +153,7 @@ function PromptsStory({ project }: { project: Project }) {
         <GraphicPhoto className="prompt-visual-band__photo" src={project.decorImage} alt="Concept Prompt Engineering" label="INPUT → REFINE → EVALUATE" />
         <div className="prompt-visual-band__console"><span>SYSTEM</span><code>You are a helpful English tutor.</code><span>USER</span><code>Explain the passive voice for A2 learners.</code><span>OUTPUT</span><code>Clear · structured · example-led</code></div>
       </div>
-      <Reveal className="prompt-console-title"><span>PROMPT LAB / 03</span><h2>Ba cấp độ cho ba tác vụ học tập</h2></Reveal>
+      <Reveal className="prompt-console-title"><span>PROMPT LAB / 3</span><h2>Ba cấp độ cho ba tác vụ học tập</h2></Reveal>
       <div className="prompt-levels">
         {levels.map(([code, title, text], index) => (
           <Reveal className="prompt-level" key={code} delay={index * 70}><span>{code}</span><h3>{title}</h3><p>{text}</p><div className="prompt-cursor">_</div></Reveal>

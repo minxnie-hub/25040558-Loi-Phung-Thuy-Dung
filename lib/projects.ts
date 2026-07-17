@@ -31,7 +31,7 @@ export const projects: Project[] = [
     pages: 5,
     pdf: "/documents/bai-1-thao-tac-tep-tin-va-thu-muc.pdf",
     keywords: ["File Explorer", "Windows", "Thực hành"],
-    decorImage: "/graphics/pin-london-collage.webp",
+    decorImage: "/graphics/panel-task1.webp",
     visualNote: "Field notes · London collage · folder system"
   },
   {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     pages: 5,
     pdf: "/documents/bai-2-tim-kiem-va-danh-gia-thong-tin-hoc-thuat.pdf",
     keywords: ["AI in ELT", "Nguồn học thuật", "Harvard"],
-    decorImage: "/graphics/pin-bigben-editorial.webp",
+    decorImage: "/graphics/panel-task2.webp",
     visualNote: "Academic editorial · archive · evidence board"
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     pages: 6,
     pdf: "/documents/bai-3-viet-prompt-hieu-qua.pdf",
     keywords: ["Prompt", "AI", "Học tập"],
-    decorImage: "/graphics/concept-prompt.webp",
+    decorImage: "/graphics/panel-task3.webp",
     visualNote: "Prompt console · input → refine → evaluate"
   },
   {
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     pages: 2,
     pdf: "/documents/bai-4-cong-cu-hop-tac-truc-tuyen.pdf",
     keywords: ["Google Docs", "Làm việc nhóm", "Minh chứng"],
-    decorImage: "/graphics/concept-collab.webp",
+    decorImage: "/graphics/panel-task4.webp",
     visualNote: "Transit map · task board · connected teamwork"
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     pages: 6,
     pdf: "/documents/bai-5-ai-tao-sinh-sang-tao-noi-dung.pdf",
     keywords: ["ChatGPT", "DALL-E", "Canva AI"],
-    decorImage: "/graphics/pin-london-city.webp",
+    decorImage: "/graphics/panel-task5.webp",
     visualNote: "Creative scrapbook · image · type · layout"
   },
   {
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     pages: 5,
     pdf: "/documents/bai-6-ai-co-trach-nhiem.pdf",
     keywords: ["Đạo đức AI", "Minh bạch", "Học thuật"],
-    decorImage: "/graphics/concept-ethics.webp",
+    decorImage: "/graphics/panel-task6.webp",
     visualNote: "Policy poster · checklist · responsibility seal"
   }
 ];

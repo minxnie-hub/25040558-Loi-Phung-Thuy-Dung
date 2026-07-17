@@ -1,13 +1,15 @@
-BUILD VERIFIED — Pinterest Graphic Upgrade
-Date: 2026-07-17
-Node.js compatibility: >=20 <25
-Next.js: 14.2.35
-Commands verified:
+Verification completed on 2026-07-17
+
+Commands tested from a clean install:
   npm ci --include=dev --no-audit --no-fund
-  NEXT_TELEMETRY_DISABLED=1 npm run build
+  NEXT_PUBLIC_BASE_PATH=/25040558-Loi-Phung-Thuy-Dung npm run build
+
 Result:
-  ✓ Compiled successfully
-  ✓ Type checking completed
-  ✓ 11 static pages generated
-  ✓ Home + 6 project routes exported for GitHub Pages
-Deployment workflow preserved at .github/workflows/deploy.yml
+  - Dependencies installed successfully
+  - Next.js v14.2.35 available at node_modules/.bin/next
+  - Production static export completed successfully
+  - Home, six project routes, framework routes and generated metadata exported
+  - out/index.html exists
+  - out/_next exists
+  - Tested at 390px, 768px and 1440px: no horizontal overflow
+  - Tested exported routes: no broken local images

@@ -29,19 +29,23 @@ export default function HomePage() {
               <Link href="#gioi-thieu" className="button button--ghost">Giới thiệu bản thân</Link>
             </div>
             <div className="hero__meta">
-              <span><b>06</b><small>Bài tập</small></span>
+              <span><b>6</b><small>Bài tập</small></span>
               <span><b>QH2025</b><small>Khoá học</small></span>
               <span><b>ULIS</b><small>Ngôn ngữ Anh</small></span>
             </div>
           </div>
 
           <div className="hero-collage">
-            <GraphicPhoto
-              className="hero-collage__london"
-              src="/graphics/pin-london-collage.webp"
-              alt="Graphic collage London từ bảng tham khảo Pinterest"
-              label="LONDON / VISUAL NOTE 01"
-            />
+            <div className="hero-collage__board">
+              <GraphicPhoto
+                className="hero-collage__panel"
+                src="/graphics/panel-task2.webp"
+                alt="Graphic London theo phong cách editorial"
+                label="LONDON / GRAPHIC STUDY"
+              />
+              <img className="hero-collage__sticker hero-collage__sticker--stamp" src={asset("/graphics/stickers/bigben-stamp.png")} alt="" aria-hidden="true" />
+              <img className="hero-collage__sticker hero-collage__sticker--bus" src={asset("/graphics/stickers/bus-red.png")} alt="" aria-hidden="true" />
+            </div>
             <figure className="hero-collage__portrait">
               <span className="hero-collage__portrait-tape" aria-hidden="true" />
               <img src={asset("/profile/loi-phung-thuy-dung.webp")} alt="Ảnh chân dung của sinh viên Lôi Phùng Thuỳ Dung" />
@@ -70,8 +74,8 @@ export default function HomePage() {
           <Reveal className="about-visual" delay={80}>
             <GraphicPhoto
               className="about-visual__photo"
-              src="/graphics/pin-london-ink.webp"
-              alt="Graphic London đỏ đen từ bảng tham khảo Pinterest"
+              src="/graphics/panel-task5.webp"
+              alt="Graphic trang trí phong cách creative studio"
               label="BRITISH VISUAL CULTURE"
             />
             <div className="interest-board">
@@ -107,7 +111,7 @@ export default function HomePage() {
           <div className="journey-line">
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className="journey-stop">
-                <span>{project.number}</span><strong>{project.shortTitle}</strong>
+                <span>{String(Number(project.number))}</span><strong>{project.shortTitle}</strong>
               </Link>
             ))}
           </div>
