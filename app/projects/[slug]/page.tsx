@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import { AssignmentContent } from "@/components/assignment-content";
-import { UnionJack } from "@/components/brand-marks";
-import { ObjectScene } from "@/components/object-scene";
+import { ProjectIcon } from "@/components/british-scenes";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { asset } from "@/lib/assets";
@@ -19,8 +18,7 @@ function ProjectHero({ project }: { project: Project }) {
       <div className="project-hero__shell">
         <div className="project-hero__copy">
           <Link href="/#bai-tap" className="back-link"><ArrowLeft /> Quay lại danh sách bài tập</Link>
-          <div className="project-hero__edition"><UnionJack /><span>{project.label} · Bài {Number(project.number)}</span></div>
-          <span className="project-hero__number">{Number(project.number)}</span>
+          <p className="project-hero__kicker">Bài {Number(project.number).toString().padStart(2, "0")} · {project.label}</p>
           <h1>{project.title}</h1>
           <p className="project-hero__description">{project.description}</p>
           <dl className="project-hero__meta">
@@ -29,7 +27,11 @@ function ProjectHero({ project }: { project: Project }) {
           </dl>
           <a className="button button--primary" href={asset(project.pdf)} target="_blank" rel="noreferrer">Mở PDF gốc <Download /></a>
         </div>
-        <ObjectScene theme={project.theme} />
+        <div className="project-hero__symbol-card">
+          <span className="project-hero__symbol-number">{Number(project.number).toString().padStart(2, "0")}</span>
+          <ProjectIcon theme={project.theme} className="project-symbol--hero" />
+          <p>{project.shortTitle}</p>
+        </div>
       </div>
     </section>
   );
