@@ -1,15 +1,20 @@
-Verification completed on 2026-07-17
+BUILD AND QA STATUS
+===================
 
-Commands tested from a clean install:
-  npm ci --include=dev --no-audit --no-fund
-  NEXT_PUBLIC_BASE_PATH=/25040558-Loi-Phung-Thuy-Dung npm run build
+Date: 2026-07-17
 
-Result:
-  - Dependencies installed successfully
-  - Next.js v14.2.35 available at node_modules/.bin/next
-  - Production static export completed successfully
-  - Home, six project routes, framework routes and generated metadata exported
-  - out/index.html exists
-  - out/_next exists
-  - Tested at 390px, 768px and 1440px: no horizontal overflow
-  - Tested exported routes: no broken local images
+Checks completed:
+- npm ci completed successfully.
+- Next.js production build compiled successfully.
+- TypeScript validation completed successfully.
+- Static export generated 8 HTML routes: home, 404 and 6 assignment pages.
+- GitHub Pages repository base path was tested with /25040558-Loi-Phung-Thuy-Dung.
+- _next assets, project links and object image paths received the expected base-path prefix.
+- Six assignment pages contain their expected headings, tables and report sections.
+- Vietnamese source files are UTF-8 NFC and contain no replacement glyphs.
+- Typography uses Segoe UI / Noto Sans / Arial fallbacks; no external font dependency.
+- All seven decorative WebP objects contain transparency.
+- No active component references the previous poster-crop graphics.
+- GitHub Pages workflow installs dependencies before running the build.
+
+Visual browser screenshot validation was not used because the container Chromium process could not complete headless capture. Build, route, asset, text and Unicode checks all passed.

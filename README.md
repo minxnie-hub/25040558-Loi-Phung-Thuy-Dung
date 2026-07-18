@@ -1,58 +1,38 @@
-# Portfolio Lôi Phùng Thuỳ Dung — 25040558
+# Portfolio — Lôi Phùng Thuỳ Dung
 
 Portfolio tĩnh cho học phần **Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo**.
 
-## Công nghệ
+- Sinh viên: Lôi Phùng Thuỳ Dung
+- Mã sinh viên: 25040558
+- Khoá: QH2025
+- Ngành: Ngôn ngữ Anh — ULIS, ĐHQGHN
+- Stack: Next.js 14, TypeScript, Tailwind/PostCSS
+- Xuất bản: Static export, tương thích GitHub Pages
 
-- Next.js 14 + TypeScript
-- Tailwind CSS
-- Static export cho GitHub Pages
-- Lucide icons
-- Không tải font từ CDN; dùng bộ font hệ thống có fallback hỗ trợ tiếng Việt
+## Nội dung
 
-## Thiết kế V2
+Website có trang giới thiệu và sáu trang bài tập. Nội dung bài được dựng bằng HTML theo đúng trình tự tài liệu gốc; bảng được kẻ lại bằng HTML, ảnh chỉ được dùng tại vị trí minh chứng thực tế.
 
-- Bảng màu xuyên suốt: **British Red, trắng và xanh navy**.
-- Phong cách British editorial / London learning journal, giảm cảm giác template và “AI-generated”.
-- Sáu bài tập có sáu cách dàn trang riêng: field notebook, academic newspaper, prompt terminal, collaboration board, creative studio scrapbook và ethics manifesto.
-- Union Jack, London skyline, Tube roundel, vé tàu, tem thư, kẹp giấy và ghi chú được dựng bằng CSS/SVG để giữ nét đồng bộ.
-- Ảnh minh chứng và tài liệu đều lấy từ bài nộp gốc của sinh viên, không tạo minh chứng giả.
-- Đã tối ưu desktop, tablet và mobile; có xử lý ngắt dòng cho tiếng Việt.
-
-## Chạy local
+## Chạy dự án
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Mở `http://localhost:3000`.
-
-## Build
+## Kiểm tra build tĩnh
 
 ```bash
+npm ci
 npm run build
 ```
 
-Thư mục deploy được xuất ra `out/`.
+Kết quả static export nằm trong thư mục `out/`.
 
-## GitHub Pages
+## Deploy GitHub Pages
 
-Workflow `.github/workflows/deploy.yml` tự động cài dependency, build và deploy khi push lên nhánh `main`. Trong **Settings → Pages**, chọn **Source: GitHub Actions**.
+Workflow có sẵn tại `.github/workflows/deploy.yml`. Trong GitHub, chọn **Settings → Pages → Source: GitHub Actions** rồi push nhánh `main`.
 
-Workflow tự nhận tên repository để thiết lập `basePath`, vì vậy ảnh, PDF và các trang chi tiết vẫn hoạt động ở đường dẫn `username.github.io/ten-repository/`.
+## Asset credits
 
-## Nội dung
-
-- Giữ nguyên phần giới thiệu do sinh viên cung cấp.
-- Ảnh ở trang chi tiết được lấy từ các tệp bài làm gốc.
-- Tài liệu gốc nằm trong `public/documents/`.
-
-
-## Pinterest graphic upgrade
-
-- Added locally hosted crops from the supplied Pinterest reference board.
-- Six assignments now use six different visual systems.
-- Original student screenshots and PDFs are preserved.
-- System font stacks are used to prevent Vietnamese diacritic errors.
-- Decorative objects are contained inside dedicated visual regions to avoid overlap.
+Xem `public/ASSET-CREDITS.md`.

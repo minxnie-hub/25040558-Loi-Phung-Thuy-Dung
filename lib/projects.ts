@@ -9,12 +9,9 @@ export type Project = {
   theme: ProjectTheme;
   description: string;
   subject: string;
-  coverPage: number;
   pages: number;
   pdf: string;
   keywords: string[];
-  decorImage: string;
-  visualNote: string;
 };
 
 export const projects: Project[] = [
@@ -27,12 +24,9 @@ export const projects: Project[] = [
     theme: "files",
     description: "Thực hành tạo, đổi tên, sao chép, di chuyển, xóa và khôi phục tệp tin trên Windows bằng minh chứng chụp màn hình.",
     subject: "12 thao tác cơ bản · File Explorer · Copy / Cut / Delete / Restore",
-    coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-1-thao-tac-tep-tin-va-thu-muc.pdf",
     keywords: ["File Explorer", "Windows", "Thực hành"],
-    decorImage: "/graphics/panel-task1.webp",
-    visualNote: "Field notes · London collage · folder system"
   },
   {
     number: "02",
@@ -43,12 +37,9 @@ export const projects: Project[] = [
     theme: "research",
     description: "Báo cáo tìm kiếm, đánh giá và tổng hợp nguồn học thuật về Artificial Intelligence in English Language Teaching and Learning.",
     subject: "Google Scholar · ERIC · Oxford Academic · Harvard references",
-    coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-2-tim-kiem-va-danh-gia-thong-tin-hoc-thuat.pdf",
     keywords: ["AI in ELT", "Nguồn học thuật", "Harvard"],
-    decorImage: "/graphics/panel-task2.webp",
-    visualNote: "Academic editorial · archive · evidence board"
   },
   {
     number: "03",
@@ -59,12 +50,9 @@ export const projects: Project[] = [
     theme: "prompts",
     description: "So sánh prompt cơ bản, cải tiến và nâng cao cho ba tác vụ: tóm tắt tài liệu, giải thích khái niệm và tạo câu hỏi ôn tập.",
     subject: "Basic · Improved · Advanced · Role prompting · Few-shot",
-    coverPage: 1,
     pages: 6,
     pdf: "/documents/bai-3-viet-prompt-hieu-qua.pdf",
     keywords: ["Prompt", "AI", "Học tập"],
-    decorImage: "/graphics/panel-task3.webp",
-    visualNote: "Prompt console · input → refine → evaluate"
   },
   {
     number: "04",
@@ -75,12 +63,9 @@ export const projects: Project[] = [
     theme: "collab",
     description: "Nhật ký cá nhân trong dự án giữa kỳ, ghi nhận nhiệm vụ, lịch sử làm việc nhóm và minh chứng sử dụng công cụ cộng tác.",
     subject: "Google Docs · Google Drive · Google Meet · Hoàn thành đúng hạn",
-    coverPage: 2,
     pages: 2,
     pdf: "/documents/bai-4-cong-cu-hop-tac-truc-tuyen.pdf",
     keywords: ["Google Docs", "Làm việc nhóm", "Minh chứng"],
-    decorImage: "/graphics/panel-task4.webp",
-    visualNote: "Transit map · task board · connected teamwork"
   },
   {
     number: "05",
@@ -91,12 +76,9 @@ export const projects: Project[] = [
     theme: "studio",
     description: "Dự án blog “5 phương pháp học ngoại ngữ hiệu quả cho sinh viên” với ChatGPT, DALL-E và Canva AI.",
     subject: "ChatGPT → DALL-E → Canva AI → Sản phẩm hoàn thiện",
-    coverPage: 4,
     pages: 6,
     pdf: "/documents/bai-5-ai-tao-sinh-sang-tao-noi-dung.pdf",
     keywords: ["ChatGPT", "DALL-E", "Canva AI"],
-    decorImage: "/graphics/panel-task5.webp",
-    visualNote: "Creative scrapbook · image · type · layout"
   },
   {
     number: "06",
@@ -107,13 +89,10 @@ export const projects: Project[] = [
     theme: "ethics",
     description: "Phân tích chính sách, minh bạch việc dùng AI, các vấn đề đạo đức và bộ nguyên tắc cá nhân; kèm infographic thực tế trong bài.",
     subject: "Academic integrity · AI declaration · IELTS Writing · Infographic",
-    coverPage: 1,
     pages: 5,
     pdf: "/documents/bai-6-ai-co-trach-nhiem.pdf",
     keywords: ["Đạo đức AI", "Minh bạch", "Học thuật"],
-    decorImage: "/graphics/panel-task6.webp",
-    visualNote: "Policy poster · checklist · responsibility seal"
-  }
+  },
 ];
 
 export function getProject(slug: string) {

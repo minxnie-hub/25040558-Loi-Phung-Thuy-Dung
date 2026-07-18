@@ -1,9 +1,17 @@
 import Link from "next/link";
-import { ArrowDownRight, BookOpen, BrainCircuit, Brush, CheckCircle2, Gamepad2, GraduationCap, Sparkles } from "lucide-react";
+import {
+  ArrowDownRight,
+  BookOpen,
+  BrainCircuit,
+  Brush,
+  CheckCircle2,
+  Gamepad2,
+  GraduationCap,
+  Sparkles,
+} from "lucide-react";
 import { UnionJack } from "@/components/brand-marks";
-import { GraphicPhoto, PaperSticker } from "@/components/graphic-photo";
+import { ObjectScene } from "@/components/object-scene";
 import { ProjectCard } from "@/components/project-card";
-import { HomeBritishBoard } from "@/components/theme-artboard";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -24,32 +32,28 @@ export default function HomePage() {
             <div className="hero__edition"><UnionJack /><span>British academic portfolio · QH2025</span></div>
             <p className="hero__kicker">ENGLISH LANGUAGE · ULIS–VNU · 25040558</p>
             <h1 id="hero-title"><span>Lôi Phùng</span><strong>Thuỳ Dung</strong></h1>
-            <p className="hero__lead">Một hành trình học tập số được kể bằng tư duy ngôn ngữ, ảnh minh chứng thật và sáu chương thiết kế khác biệt.</p>
+            <p className="hero__lead">Portfolio tổng hợp sáu bài tập của học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo, được trình bày bằng nội dung đầy đủ, bảng HTML và minh chứng gốc.</p>
             <div className="hero__actions">
               <Link href="#bai-tap" className="button button--primary">Khám phá 6 bài tập <ArrowDownRight /></Link>
               <Link href="#gioi-thieu" className="button button--ghost">Giới thiệu bản thân</Link>
             </div>
-            <div className="hero__meta">
-              <span><b>6</b><small>Bài tập</small></span>
-              <span><b>QH2025</b><small>Khoá học</small></span>
-              <span><b>ULIS</b><small>Ngôn ngữ Anh</small></span>
-            </div>
+            <dl className="hero__meta">
+              <div><dt>6</dt><dd>Bài tập</dd></div>
+              <div><dt>QH2025</dt><dd>Khoá học</dd></div>
+              <div><dt>ULIS</dt><dd>Ngôn ngữ Anh</dd></div>
+            </dl>
           </div>
 
-          <div className="hero-collage">
-            <div className="hero-collage__board">
-              <HomeBritishBoard />
-            </div>
-            <figure className="hero-collage__portrait">
-              <span className="hero-collage__portrait-tape" aria-hidden="true" />
+          <div className="hero-visual" aria-label="Chân dung và graphic biểu tượng nước Anh">
+            <ObjectScene theme="home" />
+            <figure className="portrait-card">
+              <span className="portrait-card__tape" aria-hidden="true" />
               <img src={asset("/profile/loi-phung-thuy-dung.webp")} alt="Ảnh chân dung của sinh viên Lôi Phùng Thuỳ Dung" />
               <figcaption>English Language Student · ULIS</figcaption>
             </figure>
-            <PaperSticker className="hero-collage__quote">Read widely.<br />Think clearly.<br />Create responsibly.</PaperSticker>
-            <span className="hero-collage__flag"><UnionJack /></span>
           </div>
         </div>
-        <div className="hero__ticker">
+        <div className="hero__ticker" aria-hidden="true">
           <span>READ</span><i>•</i><span>CREATE</span><i>•</i><span>RESEARCH</span><i>•</i><span>THINK RESPONSIBLY</span><i>•</i><span>LEARN ENGLISH</span>
         </div>
       </section>
@@ -57,7 +61,7 @@ export default function HomePage() {
       <section id="gioi-thieu" className="about-section section-shell">
         <Reveal className="section-heading section-heading--rule">
           <div><p className="eyebrow">A personal introduction</p><h2>Giới thiệu</h2></div>
-          <p>Không gian cá nhân được xây từ ba lớp: học thuật, sáng tạo và tinh thần trách nhiệm.</p>
+          <p>Thông tin cá nhân được giữ nguyên theo nội dung sinh viên cung cấp.</p>
         </Reveal>
         <div className="about-section__grid">
           <Reveal className="about-letter">
@@ -65,13 +69,8 @@ export default function HomePage() {
             {intro.split("\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             <span className="signature">Lôi Phùng Thuỳ Dung</span>
           </Reveal>
-          <Reveal className="about-visual" delay={80}>
-            <GraphicPhoto
-              className="about-visual__photo"
-              src="/graphics/panel-task5.webp"
-              alt="Graphic trang trí phong cách creative studio"
-              label="BRITISH VISUAL CULTURE"
-            />
+          <Reveal className="about-side" delay={80}>
+            <ObjectScene theme="research" compact />
             <div className="interest-board">
               <article><BookOpen /><div><h3>Đọc sách</h3><p>Mở rộng kiến thức và góc nhìn.</p></div></article>
               <article><Brush /><div><h3>Vẽ tranh</h3><p>Nuôi dưỡng tư duy hình ảnh và sáng tạo.</p></div></article>
@@ -84,9 +83,9 @@ export default function HomePage() {
 
       <section id="bai-tap" className="projects-section">
         <div className="section-shell">
-          <Reveal className="section-heading section-heading--split">
+          <Reveal className="section-heading">
             <div><p className="eyebrow">Six assignments · six visual systems</p><h2>Hồ sơ bài tập</h2></div>
-            <p>Mỗi bài có một ngôn ngữ thị giác riêng. Ảnh tài liệu vẫn là ảnh thật trong bài nộp; graphic chỉ đóng vai trò lớp trang trí.</p>
+            <p>Mỗi bài có một ngôn ngữ thị giác riêng, nhưng đều dùng nội dung HTML đầy đủ và ảnh minh chứng thực tế đúng vị trí.</p>
           </Reveal>
           <div className="projects-grid">
             {projects.map((project, index) => (
@@ -97,23 +96,23 @@ export default function HomePage() {
       </section>
 
       <section id="hanh-trinh" className="journey-section">
-        <div className="section-shell journey-section__inner">
+        <div className="section-shell">
           <Reveal className="section-heading section-heading--dark">
             <div><p className="eyebrow">From foundations to responsibility</p><h2>Hành trình học tập</h2></div>
-            <p>Sáu chặng nối từ kỹ năng số nền tảng tới năng lực nghiên cứu, sáng tạo và sử dụng AI có đạo đức.</p>
+            <p>Sáu chặng nối từ kỹ năng số nền tảng tới nghiên cứu, hợp tác, sáng tạo và sử dụng AI có đạo đức.</p>
           </Reveal>
           <div className="journey-line">
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className="journey-stop">
-                <span>{String(Number(project.number))}</span><strong>{project.shortTitle}</strong>
+                <span>{Number(project.number)}</span><strong>{project.shortTitle}</strong>
               </Link>
             ))}
           </div>
           <Reveal className="learning-outcomes">
-            <article><GraduationCap /><h3>Nền tảng số</h3><p>Từ thao tác tệp tin đến tổ chức tài liệu học tập.</p></article>
+            <article><GraduationCap /><h3>Nền tảng số</h3><p>Tổ chức tệp tin và thư mục khoa học.</p></article>
             <article><BookOpen /><h3>Nghiên cứu</h3><p>Tìm kiếm, đánh giá và trình bày nguồn học thuật.</p></article>
             <article><Sparkles /><h3>Sáng tạo với AI</h3><p>Viết prompt, hợp tác và phát triển nội dung số.</p></article>
-            <article><CheckCircle2 /><h3>Trách nhiệm</h3><p>Giữ vai trò chủ động, minh bạch và có đạo đức.</p></article>
+            <article><CheckCircle2 /><h3>Trách nhiệm</h3><p>Minh bạch, kiểm chứng và giữ tư duy độc lập.</p></article>
           </Reveal>
         </div>
       </section>

@@ -1,227 +1,41 @@
-# Design System Master File
+# Design System — Lôi Phùng Thuỳ Dung Portfolio
 
-> **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.
-> If that file exists, its rules **override** this Master file.
-> If not, strictly follow the rules below.
+## Direction
 
----
+British academic editorial with individually isolated photographic cutouts. Decorative objects remain inside dedicated visual scenes and never overlap the reading column.
 
-**Project:** Loi Phung Thuy Dung Portfolio
-**Generated:** 2026-07-17 11:31:17
-**Category:** Academic Journal / Scholarly Publishing
-**Design Dials:** Variance 7/10 (Balanced / Modern) | Motion 4/10 (Standard) | Density 5/10 (Standard)
+## Palette
 
----
+- Navy: `#071D3D`
+- Secondary navy: `#0B2D5C`
+- British red: `#CF1735`
+- Blue: `#1F5CA8`
+- White: `#FFFFFF`
+- Warm paper: `#F5F2EA`
+- Cool paper: `#F5F8FC`
 
-## Global Rules
+## Typography
 
-### Color Palette
-
-| Role | Hex | CSS Variable |
-|------|-----|--------------|
-| Primary | `#102A56` | `--color-primary` |
-| On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#173E77` | `--color-secondary` |
-| Accent/CTA | `#C8102E` | `--color-accent` |
-| Background | `#F4F7FB` | `--color-background` |
-| Foreground | `#081A36` | `--color-foreground` |
-| Muted | `#E7EEF8` | `--color-muted` |
-| Border | `#C8D8EE` | `--color-border` |
-| Destructive | `#8F0C22` | `--color-destructive` |
-| Ring | `#C8102E` | `--color-ring` |
-
-**Color Notes:** British red, crisp white and scholarly navy. Every page may vary in composition, but no extra theme color is introduced.
-
-### Typography
-
-- **Heading Font:** Playfair Display
-- **Body Font:** Source Serif 4
-- **Mood:** monochrome, editorial, austere, typographic, pocket manifesto, luxury, high contrast, brutalist mobile
-- **Google Fonts:** [Playfair Display + Source Serif 4](https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400|Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300)
-
-**CSS Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap');
-```
-
-### Spacing Variables
-
-*Density: 5/10 — Standard*
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
-
-### Shadow Depths
-
-| Level | Value | Usage |
-|-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
-
----
-
-## Component Specs
-
-### Buttons
+Use a Vietnamese-safe local system stack only:
 
 ```css
-/* Primary Button */
-.btn-primary {
-  background: #C8102E;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: #102A56;
-  border: 2px solid #102A56;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+font-family: "Segoe UI", "Noto Sans", Arial, Helvetica, sans-serif;
 ```
 
-### Cards
+No downloaded font files and no remote font dependency. Vietnamese headings use normal letter spacing and normal word breaking.
 
-```css
-.card {
-  background: #FFFFFF;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
-}
+## Content rules
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-```
+1. Rebuild report text as HTML in the same order as the submitted document.
+2. Recreate tables with semantic HTML; do not use a screenshot of a table.
+3. Place screenshots immediately after the step or paragraph they prove.
+4. Use screenshots only for actual evidence, not as substitutes for readable report text.
+5. Use the red–white–blue palette on every page while varying the page composition.
 
-### Inputs
+## Visual rules
 
-```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
-
-.input:focus {
-  border-color: #102A56;
-  outline: none;
-  box-shadow: 0 0 0 3px #C8102E20;
-}
-```
-
-### Modals
-
-```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
-}
-```
-
----
-
-## Style Guidelines
-
-**Style:** Minimalist Monochrome
-
-**Keywords:** monochrome, black white, editorial, austere, typographic, sharp, zero radius, high contrast, brutalist, pocket editorial, serif, mechanical
-
-**Best For:** Luxury fashion e-commerce mobile, editorial publications, high-end portfolio apps, experimental/avant-garde brands, digital exhibitions
-
-**Key Effects:** Instant inversion active state (tap → bg-black text-white, zero transition-none), no shadows (strictly 2D), full-bleed horizontal rules (4px black section dividers), subtle paper noise texture (opacity: 0.03), slide-in page transitions with hard edge
-
-### Page Pattern
-
-**Pattern Name:** Portfolio Grid
-
-- **Conversion Strategy:** Visuals first. Filter by category. Fast loading essential.
-- **CTA Placement:** Project Card Hover + Footer Contact
-- **Section Order:** 1. Hero (Name/Role), 2. Project Grid (Masonry), 3. About/Philosophy, 4. Contact
-
----
-
-## Motion
-
-**Stagger List** (Standard) — Trigger: load or scroll | Duration: 300-450ms | Easing: `back.out(1.4)`
-
-```js
-gsap.from('.grid-item', { opacity: 0, scale: 0.92, y: 16, duration: 0.4, stagger: { each: 0.06, from: 'start', grid: 'auto' }, ease: 'back.out(1.4)' });
-```
-
-**Framework notes:** grid: 'auto' lets GSAP infer rows/columns from a CSS grid layout for a natural wave stagger
-
-- ✅ Combine with from: 'center' for a bento-grid layout to draw the eye inward first
-- ❌ Don't use back.out on dense data tables; the overshoot reads as sloppy on informational UI
-- ⚡ Group DOM writes; avoid interleaving layout reads (getBoundingClientRect) between staggered tweens
-
----
-
-## Anti-Patterns (Do NOT Use)
-
-- ❌ Flat design without depth
-- ❌ Text-heavy pages
-
-### Additional Forbidden Patterns
-
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
-- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
-
----
-
-## Pre-Delivery Checklist
-
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
-- [ ] Focus states visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected
-- [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
-- [ ] No horizontal scroll on mobile
+- Use isolated transparent objects, never a full poster crop.
+- Prefer real photographic cutouts for Big Ben, a red telephone box, tea, books, stationery and scales.
+- Keep decoration in `.object-scene`; content blocks remain in normal document flow.
+- Avoid oversized section numbers, repetitive floating cards and generic AI gradients.
+- Motion is restrained and respects `prefers-reduced-motion`.

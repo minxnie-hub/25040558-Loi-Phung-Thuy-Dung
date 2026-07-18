@@ -11,7 +11,7 @@ export function SiteFooter() {
       </div>
       <div className="site-footer__note">
         <p>Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</p>
-        <small>Graphic notes: public/graphics/CREDITS.md</small>
+        <small>Nguồn asset và giấy phép: public/ASSET-CREDITS.md</small>
       </div>
     </footer>
   );
